@@ -1,0 +1,16 @@
+<div class="container">
+
+  <form (ngSubmit)="login()" #loginForm="ngForm" class="login-form">
+    <mat-form-field class="form-field">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" ngModel name="username" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" ngModel name="password" required>
+    </mat-form-field>
+    <button mat-flat-button class="submit-button" type="submit">Submit</button>
+    <mat-error color="danger" *ngIf="!isValid">Please enter valid credentials</mat-error>
+  </form>
+
+</div>
