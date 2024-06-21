@@ -1,0 +1,12 @@
+<div class="container">
+  <h4>Title: {{data.title}}</h4>
+  <p>Body: {{data.body}}</p>
+  <p>Tags:</p>
+  <ul>
+    <li *ngFor="let tag of data.tags"> {{tag}}</li>
+  </ul>
+  <p>Likes: {{data.reactions.likes}}</p>
+  <p>Dislikes: {{data.reactions.dislikes}}</p>
+  <p>Views: {{data.views}}</p>
+
+</div>

@@ -1,0 +1,36 @@
+<div *ngIf="(posts$ | async) as posts" class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Tags</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let post of posts" (click)="showPostDetails(post)"
+        [ngClass]="post.tags.includes(selectedTagName) ? 'selectedTag':''">
+        <td>{{ post.title }}</td>
+        <td>
+          <span *ngFor="let tag of post.tags; let last = last">
+            {{ tag }}{{ !last ? ', ' : '' }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination" *ngIf="(pages$ |async) as pages">
+    <button class="pag-btn" *ngFor="let iteration of getIterations(pages)" (click)="changePage(iteration)">
+      {{iteration}}
+    </button>
+
+  </div>
+
+  <div class="tags">
+    <ng-select [items]="tags" bindLabel="name" bindValue="id" [(ngModel)]="selectedTag" placeholder="Select tag: "
+      (change)="tagChanged()">
+    </ng-select>
+
+  </div>
+
+</div>

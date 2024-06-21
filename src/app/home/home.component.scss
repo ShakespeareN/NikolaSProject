@@ -1,0 +1,22 @@
+.tags {
+  width: 100%;
+  background-color: rgb(153, 153, 153);
+  cursor: pointer;
+  padding: 5px;
+}
+
+.selectedTag {
+  background-color: red;
+  color: white;
+
+}
+
+.pagination{
+  width: 100%;
+  display: flex;
+  margin: 5px;
+}
+
+.pag-btn{
+  margin: 5px;
+}
